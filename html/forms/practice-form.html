@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Practice Form</title>
+</head>
+<body>
+  <h1>Favorite Will Ferrell Movies</h1>
+  <form name="fav-movie" action="success.html" method="post">
+  <fieldset>
+    <div>
+      <label>First Name:</label>
+      <input type="text" name="first_name">
+    </div>
+
+    <div>
+      <label>Last Name:</label>
+      <input type="text" name="last_name">
+    </div>
+
+    <div>
+      <label>Email:</label>
+      <input type="email" name="email">
+    </div>
+
+    <div>
+      <label>Password:</label>
+      <input type="password" name="password">
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <div>
+      <label>Favorite Will Ferrell Movie:</label>
+      <select name="will-ferrell-movie">
+        <option value="talladega nights">Talladega Nights</option>
+        <option value="step_brothers">Step Brothers</option>
+        <option value="old_school">Old School</option>
+        <option value="anchor_man">Anchor Man</option>
+      </select>
+    </div>
+    <div>
+      <label>Choose your favorite character:</label>
+      <label>
+        <input type="radio" name="fav_character" value="ricky_bobby" > Ricky Bobby
+      </label>
+      <label>
+        <input type="radio" name="fav_character" value="brennan_huff" > Brennan Huff
+      </label>
+      <label>
+        <input type="radio" name="fav_character" value="frank_ricard"> Frank Ricard
+      </label>
+      <label>
+        <input type="radio" name="fav_character" value="ron_burgundy"> Ron Burgundy
+      </label>
+    </div>
+    <div>
+      <textarea name="comment" rows="4" cols="50">Tell us why you like Will Ferrell Movies?</textarea>
+    </div>
+  </fieldset>
+  
+  <button type="submit">Submit your Choices</button>
+</form>
+
+</body>
+</html>
