@@ -1,7 +1,18 @@
+
+
 #octopus {
   position: fixed;
   top: 50%;
   left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
+  transform: translate(-50%, -50%);
+  padding-top: 20px;
 }
+
+#hat {
+  position: absolute;
+  top: 28%;
+  left: 51%;
+  transform: translate(-50%, -50%);
+}
+
+
