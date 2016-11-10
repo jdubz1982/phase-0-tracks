@@ -1,0 +1,26 @@
+/* 3.2 Release 1*/
+
+#contact-info {
+  font-size: .8em;
+}
+
+.job {
+  background-color: #e9e5dc;
+  border-radius: 5px;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.accomplishments {
+  font-size: .8em;
+}
+
+.job:hover {
+  background-color: #D3D3D3;
+  font-family: Times;
+}
+
+.job li {
+  color: #4169e1;
+}
