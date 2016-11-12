@@ -1,9 +1,8 @@
 
 #octopus {
-  position: absolute;
+  position: fixed;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
   padding-top: 75px;
   padding-left: 50px;
   padding-right: 50px;
@@ -11,9 +10,9 @@
 }
 
 #hat {
-  position: relative;
-  top: 15px;
-  left: 30px;
+  position: absolute;
+  top: 25px;
+  left: 40px;
   z-index: 2;
 }
 
