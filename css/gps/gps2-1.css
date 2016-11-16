@@ -1,0 +1,33 @@
+header {
+  padding: 20px;
+  background: url("https://enterprise.github.com/assets/aws/jetpack-octocat-clouds-ab3c258e0b58dc8354ebb57139827a23dcf3849d14ee8c6795a67a7bcfde9fb4.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+header h1 {
+  font-family: Impact;
+}
+
+p {
+  font-family: "Arial", "serif";
+}
+
+.column-1 {
+  display: inline-block;
+  vertical-align: top;
+  width: 43%;
+  background-color: red;
+}
+
+.column-2 {
+  display: inline-block;
+  vertical-align: top;
+  width: 43%;
+  margin-left: 30px;
+  background-color: blue;
+}
+
+footer {
+  padding: 20px;
+  background-color: grey;
+}
