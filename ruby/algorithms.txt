@@ -1,0 +1,69 @@
+#Release 0: Equip your New Robot
+##Teach robot how to use an elevator
+* Walk to elevator. 
+  * Ask user what current floor we are on. 
+  * Ask user what destination floor we would like to go to
+    * If destination floor is less than current floor or destination floor equals basement
+        * press down button
+    * otherwise 
+        * press up button
+* Wait for door to open
+* When door opens, walk into elevator 
+    * if destination numbers on right
+        * walk to the right front of the elevator
+        * press destination button 
+    * otherwise
+        * walk to front left of elevator
+        * press destination button 
+* Wait for doors to close
+* until doors open and current floor equals destination floor
+    * wait in elevator
+* When doors open, walk out of elevator and wait in hallway 
+
+
+#Release 1: Find a Real-Life Algorithm
+##Algorithm to make coffee
+* Walk to coffee machine 
+* Decide how many cups of coffee you would like to make
+* Grab coffee pot from machine and walk to sink
+* Turn on faucet to cold
+* Put coffee pot under faucet and leave until water level equals cups of coffee
+* Turn faucet off
+* Walk back to coffee pot
+* Pour water from coffee pot into water reserve on coffee machine
+* Put coffee pot back into coffee machine
+* Grab one coffee filter from next to coffee pot
+* Lift lid of coffee machine and put coffee filter into basket
+* Grab coffee can from next to coffee pot
+* while scoops of coffee is less than cups of coffee desired
+   * take scooper from inside coffee can and fill will with coffee grinds
+   * put coffee grinds inside coffee filter in basket
+* Close lid of coffee machine
+* Press on button on coffee machine
+* Walk to cupboard and grab favorite coffee cup
+* Place coffee cup next to coffee machine
+* Walk to refrigerator and grab milk
+* Pour milk into coffee cup filling 1/16 of coffee cup
+* Wait for beeps from coffee machine
+* while coffee pot has coffee in it
+  * take coffee pot from coffee machine and pour coffee into coffee cup until coffee cup is full
+  * put coffee pot back into coffee machine 
+  * walk to favorite chair and enjoy coffee until cup is empty
+  * walk back to coffee pot 
+  * take coffee pot from coffee machine and pour coffee into coffee cup until coffee cup is full
+* When coffee pot is empty, take coffee pot to sink
+* Turn on faucet to hot
+* Put coffee pot under sink
+* Rinse until clean
+* Turn faucet off
+* Put coffee pot back into coffee machine
+* Lift lid of coffee machine
+* Take basket out of coffee machine and walk to garbage can
+* Empty basket into garbage can
+* Walk back to coffee machine and put basket back
+* Leave lid open to dry coffee machine
+* Walk to sink with coffee cup
+* Turn on faucet to hot
+* Rinse coffee cup until clean
+* Turn faucet off
+* Place coffee cup on drying rack next to sink
