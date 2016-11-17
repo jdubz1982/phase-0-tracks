@@ -53,18 +53,23 @@ while count < employees
        correct_age = false
     end
 
-#If the employee got their age right, and is willing to eat garlic bread or sign up for insurance, the result is “Probably not a vampire.”
-    if correct_age == true && (likes_garlic == true || want_insurance == true)
-      is_vampire = "probably not a Vampire."
+#If the employee got their age right, doesn't want garlic bread but will sign up for insurance, the result is “Probably not a vampire.”
+    if correct_age && (likes_garlic == false || want_insurance)
+      is_vampire = "probably not a vampire."
     end
 
-#If the employee got their age wrong, but likes garlic bread but waives insurance, the result is “Probably a vampire.”
-    if correct_age == false && (likes_garlic == true || want_insurance == false)
+#If the employee got their age right, and is willing to eat garlic bread but doesn't want insurance, the result is “Probably not a vampire.”
+    if correct_age && (likes_garlic || want_insurance == false)
+      is_vampire = "probably not a vampire."
+    end
+
+#If the employee got their age wrong, likes garlic bread but waives insurance, the result is “Probably a vampire.”
+    if correct_age == false && (likes_garlic || want_insurance == false)
       is_vampire = "probably a vampire."
     end
 
-#If the employee got their age wrong, but hates garlic bread and wants insurance, the result is “Probably a vampire.”
-    if correct_age == false && (likes_garlic == false || want_insurance == true)
+#If the employee got their age wrong, hates garlic bread but wants insurance, the result is “Probably a vampire.”
+    if correct_age == false && (likes_garlic == false || want_insurance)
       is_vampire = "probably a vampire."
     end
 
@@ -77,6 +82,23 @@ while count < employees
     if name == "Drake Cula" || name == "Tu Fang"
       is_vampire = "definitely a vampire."
     end
+
+#set empty array to capture allergies
+allergies = []
+
+#Have employee list all allergies. Checking for "sunshine". typing "done" will stop program
+allergy = ""
+puts "Please list any allergies you may have. When finished type 'done'."
+while allergy.upcase != "DONE"
+allergy = gets.chomp
+  if allergy.upcase == "SUNSHINE"
+    allergies.push(allergy)
+    allergy = "DONE"
+    is_vampire = "probably a vampire."
+  else
+   allergies.push(allergy)
+  end
+end
 
 #Print out employee input and if the employee is vampire
 puts "Full Name: #{name}"
@@ -101,16 +123,23 @@ else
   puts "Employee does not want insurance"
 end
 
-if is_vampire == false 
-  puts "Results inconclusive. We can't tell if this candidate is a vampire."
+if allergies.pop.upcase == "SUNSHINE"
+  puts "This employee is allergic to sunshine!"
 else
-  puts "This candidate is #{is_vampire}"
+  puts "Allergies: #{allergies.join(', ')}"
+end
+
+if is_vampire == false 
+  puts "Results inconclusive. We can't tell if this employee is a vampire."
+else
+  puts "This employee is #{is_vampire}"
 end
 
 #increase count by one 
 count += 1
 end
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
   
