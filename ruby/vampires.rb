@@ -1,7 +1,17 @@
+#ask how employees need to be processed
 puts "How many employees will be processed?"
+
+#convert employees to integer
 employees = gets.chomp.to_i
+
+#set is_vampire to false
 is_vampire = false
 
+#set count to 0
+count = 0
+
+#Process multiple employees by counting up until count = employees
+while count < employees
 #Gather information from potential employees
 #Asks for name
     puts "What is your full name?"
@@ -97,7 +107,9 @@ else
   puts "This candidate is #{is_vampire}"
 end
 
-
+#increase count by one 
+count += 1
+end
 
 
 
