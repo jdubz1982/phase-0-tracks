@@ -13,11 +13,11 @@
         new_str += "a"
       else
   #add the letter next to the string location
-        new_str += str[count].next
+      new_str += str[count].next
       end
       count += 1
     end
-    puts new_str
+    new_str
   end
 
 #define decrypt with parameter string
@@ -36,7 +36,7 @@
         new_str += "z"
     # search for 0
       elsif ststr = str[count] == "0"
-        new_str += "9"
+      new_str += "9"
     # search for blank spaces
       elsif str[count] == " "
         new_str += " "
@@ -44,13 +44,45 @@
     # find the position of each letter, subtract one and return from letters variable
         new_str += letters[letters.index(str[count]) - 1]
       end
-    count += 1
+     count += 1
     end
-    puts new_str
+   new_str
   end
   
-puts encrypt("abc") 
-puts encrypt("zed") 
-puts decrypt("bcd") 
-puts decrypt("afe")
+#Driver code
+#should return "bcd"
+#puts encrypt("abc")
+#should return "afe"
+#puts encrypt("zed")
+#should return "abc"
+#puts decrypt("bcd")
+#should return "zed"
+#puts decrypt("afe")
 
+#puts decrypt(encrypt("swordfish"))
+# This works because it runs what is in the () first. encrypt returns a string
+# which is an argument that decrypt can execute on.
+
+
+#request what method the user would like use
+puts "Would you like to decrypt or encrypt your password? (type e for encrypt or d for decrypt)"
+program_select = gets.chomp
+#until user enters proper method, keep asking
+until program_select == "e" || program_select == "encrypt" || program_select == "d" || program_select == "decrypt"
+  puts "You did not choose the proper method!"
+  puts "Would you like to decrypt or encrypt your password? (type e for encrypt or d for decrypt)"
+  program_select = gets.chomp
+end
+
+#ask user for password
+puts "Please enter a password."
+password = gets.chomp
+
+#use if statement to print proper method to string
+if program_select == "e" || program_select == "encrypt"
+  puts "Your encrypted password is #{encrypt(password)}"
+elsif program_select == "d" || program_select == "decrypt"
+  puts "Your decrypted password is #{decrypt(password)}"
+else
+  puts "You did not choose the right method"
+end
