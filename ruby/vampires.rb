@@ -25,23 +25,40 @@ while count < employees
   puts "What year were you born?"
   year_born = gets.chomp.to_i
 
-  #Ask if likes garlic bread. Checks for y or yes and upcases input
-  puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
-  garlic_bread = gets.chomp.upcase
-  if garlic_bread == "Y" || garlic_bread == "YES"
-     likes_garlic = true
-  else
-     likes_garlic = false
+  #Ask if likes garlic bread. Checks for valid answer y or yes or n or no and upcases input
+  valid_answer = false
+  until valid_answer == true
+    puts "Our company cafeteria serves garlic bread. Should we order some for you? (y/n)"
+    garlic_bread = gets.chomp.upcase
+
+    if garlic_bread == "Y" || garlic_bread == "YES"
+       likes_garlic = true
+       valid_answer = true
+    elsif garlic_bread == "N" || garlic_bread == "NO"
+       likes_garlic = false
+       valid_answer = true
+    else
+      puts "That is not a valid response."
+      valid_answer = false
+    end
   end
 
-  #Ask if wants insurance. Checks for y or yes and upcases input
-  puts "Would you like to enroll in the company's health insurance? (y/n)"
-  insurance = gets.chomp.upcase
+  #Ask if wants insurance. Checks for valid answer y or yes or n or no and upcases input
+  valid_answer = false
+  until valid_answer == true
+    puts "Would you like to enroll in the company's health insurance? (y/n)"
+    insurance = gets.chomp.upcase
 
-  if insurance == "Y" || insurance == "YES"
-    want_insurance = true
-  else
-    want_insurance = false
+    if insurance == "Y" || insurance == "YES"
+      want_insurance = true
+      valid_answer = true
+    elsif insurance == "N" || insurance == "NO"
+      want_insurance = false
+      valid_answer = true
+    else
+      puts "Thats is not a valid response."
+      valid_answer = false
+    end
   end
 
   #Check to see if age matches year employee said they were born
@@ -54,22 +71,22 @@ while count < employees
   end
 
   #If the employee got their age right, doesn't want garlic bread but will sign up for insurance, the result is “Probably not a vampire.”
-  if correct_age && (likes_garlic == false || want_insurance)
+  if correct_age && (likes_garlic == false && want_insurance)
     is_vampire = "probably not a vampire."
   end
 
   #If the employee got their age right, and is willing to eat garlic bread but doesn't want insurance, the result is “Probably not a vampire.”
-  if correct_age && (likes_garlic || want_insurance == false)
+  if correct_age && (likes_garlic && want_insurance == false)
     is_vampire = "probably not a vampire."
   end
 
   #If the employee got their age wrong, likes garlic bread but waives insurance, the result is “Probably a vampire.”
-  if correct_age == false && (likes_garlic || want_insurance == false)
+  if correct_age == false && (likes_garlic && want_insurance == false)
     is_vampire = "probably a vampire."
   end
 
   #If the employee got their age wrong, hates garlic bread but wants insurance, the result is “Probably a vampire.”
-  if correct_age == false && (likes_garlic == false || want_insurance)
+  if correct_age == false && (likes_garlic == false && want_insurance)
     is_vampire = "probably a vampire."
   end
 
