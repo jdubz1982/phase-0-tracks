@@ -12,26 +12,26 @@ client_info = {
 puts "Please enter the following data:"
 
 #loop through hash and ask user to input data
-client_info.each {|k,v|
-  puts "Please enter #{k}:"
-    client_info[k] = gets.chomp
+client_info.each {|client_key,client_value|
+  puts "Please enter #{client_key}:"
+    client_info[client_key] = gets.chomp
 }
 
 #define method to update hash values by data type
-def update_data_type(x)
-  x.each {|k, v|
+def update_data_type(client_data)
+  client_data.each {|client_key, client_value|
 #check for data that should be integers
-  if k == :age || k == :number_children
-    x[k] = v.to_i
+  if client_key == :age || client_key == :number_children
+    client_data[client_key] = client_value.to_i
 #check for data that should be true or false
-  elsif k == :is_house_over_100yrs_old
-    if v == "yes" || v == "y" || v == true
-      x[k] = true
+  elsif client_key == :is_house_over_100yrs_old
+    if client_value == "yes" || client_value == "y" || client_value == true
+      client_data[client_key] = true
     else
-      x[k] = false
+      client_data[client_key] = false
     end 
   else 
-     x[k] = v  
+     client_data[client_key] = client_value 
   end
 }
 end
@@ -41,8 +41,8 @@ update_data_type(client_info)
 
 #print out results to user
 puts "You have entered the following information:"
- client_info.each {|k,v|
-   puts "#{k}: #{v}"
+ client_info.each {|client_key,client_value|
+   puts "#{client_key}: #{client_value}"
  } 
 
 #ask user if everything looks correct and allow user to update data if they need to
@@ -51,8 +51,8 @@ puts "Does this information look correct? (y/n)"
 if gets.chomp.downcase == "n" || gets.chomp.downcase == "no"
    #ask user to pick something to update
    puts "Please choose something to update:"
-    client_info.each {|k,v|
-      puts "#{k}"
+    client_info.each {|client_key,client_value|
+      puts "#{client_key}"
     }
    #get user input
     key = gets.chomp
@@ -64,8 +64,8 @@ if gets.chomp.downcase == "n" || gets.chomp.downcase == "no"
     update_data_type(client_info)
 
     puts "Your updated information is:"
-    client_info.each {|k,v|
-     puts "#{k}: #{v}"
+    client_info.each {|client_key,client_value|
+     puts "#{client_key}: #{client_value}"
     } 
 end
     
