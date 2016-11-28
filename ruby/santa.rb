@@ -3,6 +3,20 @@ class Santa
   attr_reader :age, :ethnicity
   attr_accessor :gender
 
+  # Getter methods
+  # def age
+  #   @age 
+  # end
+
+  # def ethnicity
+  #   @ethnicity
+  # end
+
+  # Setter methods
+  # def gender=(new_gender)
+  #   @gender = new_gender
+  # end
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
