@@ -16,6 +16,28 @@ class Santa
     puts "That was a good #{cookie}!" 
   end
 
+  def celebrate_birthday
+    @age = @age + 1
+  end
+
+  def get_mad_at(reindeer_name)
+    @reindeer_ranking.insert(-1, @reindeer_ranking.delete(reindeer_name))
+  end
+
+  # getter methods
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
+
+    # setter methods
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
 end
 
 # santa = Santa.new
@@ -35,6 +57,7 @@ santas << Santa.new("N/A", "N/A")
 p santas
 =end
 
+=begin
 santas = []
 example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
 example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
@@ -43,6 +66,21 @@ example_genders.length.times do |i|
 end
 
 p santas
+=end
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+klaus = Santa.new(example_genders.sample, example_ethnicities.sample)
+p klaus
+klaus.age
+klaus.ethnicity
+puts "----------"
+klaus.celebrate_birthday
+klaus.get_mad_at("Rudolph")
+klaus.gender = "male"
+p klaus
+
+
 
 
 
