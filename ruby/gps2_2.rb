@@ -92,3 +92,30 @@ end
 p current_list
 =end
 
+# What did you learn about pseudocode from working on this challenge?
+# I realized that I still don't pseudocode enough, I tend to just jump into the actual code so 
+# I can see if stuff is working. Pseudocode is helpful to get my thoughts down in sublime 
+# and work through how I think a program should work
+# I have found that my pseudocode isn't always how the program ends up though 
+# because sometimes code doesn't work out like I initially thought it would.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# Just depends on what type of data you are working with. It was better to use a hash in this challenge
+# because we had a list of items but they all had different values. 
+
+# What does a method return?
+# A method returns the last expression evaluated in the method 
+
+# What kind of things can you pass into methods as arguments?
+# You can pass all types of objects into methods. Hash, array, integers, strings and even other methods. 
+
+# How can you pass information between methods?
+# You can pass information between methods by calling a different method in the method definition or even passing
+# a method in as a parameter. 
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# I feel like I had a good understanding of methods, parameters, and arguments before this challenge
+# and it helped make my understanding stronger
+# I would say where I am in scope and what variables are available and where can still be confusing. 
+# Out guide Ryan helped us work through how to use a variable we already created and call different 
+# methods on it.
