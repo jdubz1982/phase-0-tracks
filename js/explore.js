@@ -19,5 +19,16 @@ var reverse = function(array) {
 
 };
 
+var newWord = reverse("hello world");
+
+if (newWord.length > 3) {
+  console.log(newWord);
+}
+else {
+  console.log("Your word is 3 letters or less."); 
+}
+ 
+
+
 
 
