@@ -10,17 +10,18 @@
 
 var longest = function(arr) {
   var long = arr[0];
-
+  
   for (var i=0; i < arr.length; i++) {
-    if (arr[i] > long) {
+    if (arr[i].length > long.length) {
       long = arr[i];
     }
   }
+  
   return long;
-}
+};
 
 
-var test = ["house", "car", "television", "computer", "stove"];
+var test = ["house", "car", "soccer", "television", "microwave"];
 
 console.log(longest(test));
 
@@ -55,5 +56,45 @@ var keyFinder = function(obj1, obj2) {
 
 console.log(keyFinder(objOne, objTwo));
 
+// Release 2: Generate Random Test Data
 
+// Define function to get random integer from two given numbers
+function getRandomInt(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+
+// Define function to generate a word randomly from alphabet
+// Declare empty string to build on
+// Use random number generator to determine length of string
+// Loop length of string times and pick another random letter from 
+// alphabet to add to empty string
+var generateWord = function() {
+  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var buildWord = "";
+
+    for (var i = 0; i < getRandomInt(2, 10); i++) {
+      buildWord += chars[getRandomInt(0, 26)];
+    }
+    return buildWord;
+}
+
+// Define function that takes a length of array desired
+// Call generateWord function for the amount of times indicated 
+// Push the generated word into array to store
+var randomWordArray = function(length) {
+  var randomWords = [];
+  for (var i = 0; i < length; i++) {
+    randomWords.push(generateWord());
+  }
+  return randomWords;
+}
+
+for (var i = 0; i < 10; i++) {
+ newArray = randomWordArray(getRandomInt(5, 10));
+ console.log(newArray);
+ console.log("The longest in the array is:");
+ console.log(longest(newArray));
+}
 
