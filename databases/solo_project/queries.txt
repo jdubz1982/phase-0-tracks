@@ -1,0 +1,82 @@
+Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM routines;
+1|12/02/2016|245|5|TRUE|1
+2|12/02/2016|315|5|TRUE|4
+3|12/02/2016|135|5|TRUE|3
+4|12/05/2016|225|5|TRUE|2
+5|12/05/2016|60|5|TRUE|5
+6|12/05/2016|250|5|TRUE|1
+7|12/05/2016|325|5|TRUE|4
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE routines SET completed="FALSE" WHERE date="12/05/2016";
+sqlite> SELECT * FROM routines;
+1|12/02/2016|245|5|TRUE|1
+2|12/02/2016|315|5|TRUE|4
+3|12/02/2016|135|5|TRUE|3
+4|12/05/2016|225|5|FALSE|2
+5|12/05/2016|60|5|FALSE|5
+6|12/05/2016|250|5|FALSE|1
+7|12/05/2016|325|5|FALSE|4
+
+Display the information in both tables using one query.
+
+sqlite> SELECT * FROM routines, exercises WHERE routines.exercise_id = exercises.id;
+1|12/02/2016|245|5|TRUE|1|1|Squat
+2|12/02/2016|315|5|TRUE|4|4|Deadlift
+3|12/02/2016|135|5|TRUE|3|3|Overhead Press
+4|12/05/2016|225|5|FALSE|2|2|Bench Press
+5|12/05/2016|60|5|FALSE|5|5|Pullups
+6|12/05/2016|250|5|FALSE|1|1|Squat
+7|12/05/2016|325|5|FALSE|4|4|Deadlift
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT routines.date, routines.weight, routines.completed, exercises.exercises FROM routines JOIN exercises ON routines.exercise_id = exercises.id;
+12/02/2016|245|TRUE|Squat
+12/02/2016|315|TRUE|Deadlift
+12/02/2016|135|TRUE|Overhead Press
+12/05/2016|225|FALSE|Bench Press
+12/05/2016|60|FALSE|Pullups
+12/05/2016|250|FALSE|Squat
+12/05/2016|325|FALSE|Deadlift
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM routines WHERE exercise_id=5;
+sqlite> SELECT * FROM routines;
+1|12/02/2016|245|5|TRUE|1
+2|12/02/2016|315|5|TRUE|4
+3|12/02/2016|135|5|TRUE|3
+4|12/05/2016|225|5|FALSE|2
+6|12/05/2016|250|5|FALSE|1
+7|12/05/2016|325|5|FALSE|4
+
+Release 3: Research on Your Own
+
+sqlite> SELECT exercises.exercises, routines.date, routines.weight FROM routines INNER JOIN exercises ON routines.exercise_id=exercises.id;
+Squat|12/02/2016|245
+Deadlift|12/02/2016|315
+Overhead Press|12/02/2016|135
+Bench Press|12/05/2016|225
+Squat|12/05/2016|250
+Deadlift|12/05/2016|325
+
+sqlite> SELECT exercises.exercises, routines.date, routines.completed FROM routines LEFT JOIN exercises ON routines.exercise_id=exercises.id;
+Squat|12/02/2016|TRUE
+Deadlift|12/02/2016|TRUE
+Overhead Press|12/02/2016|TRUE
+Bench Press|12/05/2016|FALSE
+Squat|12/05/2016|FALSE
+Deadlift|12/05/2016|FALSE
+
+sqlite> SELECT routines.date, exercises.exercises, routines.weight, routines.reps, routines.completed FROM routines LEFT JOIN exercises ON routines.exercise_id=exercises.id;
+12/02/2016|Squat|245|5|TRUE
+12/02/2016|Deadlift|315|5|TRUE
+12/02/2016|Overhead Press|135|5|TRUE
+12/05/2016|Bench Press|225|5|FALSE
+12/05/2016|Squat|250|5|FALSE
+12/05/2016|Deadlift|325|5|FALSE
+
