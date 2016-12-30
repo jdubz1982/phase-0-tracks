@@ -17,6 +17,11 @@ get '/students/new' do
   erb :new_student
 end
 
+get '/campuses' do
+  @campuses = db.execute("SELECT campus, COUNT(id) FROM students GROUP by campus")
+  erb :campuses
+end
+
 # create new students via
 # a form
 post '/students' do
