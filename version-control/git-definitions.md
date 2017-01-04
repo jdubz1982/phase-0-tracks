@@ -1,6 +1,6 @@
 # Git Definitions
 
-**Instructions: ** Define each of the following Git concepts.
+**** Define each of the following Git concepts.
 
 * What is version control?  Why is it useful?
     * **Version control is a tool that helps developers manage changes to source code over time. It allows you to track progress, review and revert changes, and create backups for your code. Developers can view the entire history of revisions to one or more files, test new code for bugs, and merge revisions or new features into the original source code. If a mistake is made, developers can go back and compare earlier versions of the code to help fix the mistake. It protects source code from unintended consequence or catastrophe.**
